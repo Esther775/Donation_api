@@ -1,0 +1,27 @@
+@esther_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzcwMTY1NDl9.qGdCI3vtDRreOkQqUaOtzvnw51F2jmzkRMTKbHNc8Nc
+
+
+#Users Create (User signup)
+
+POST http://localhost:3000/users.json
+Content-Type: application/json 
+
+{
+  "name": "Esther",
+  "email": "esther@morris.com",
+  "password": "password"
+}
+
+###
+POST  http://localhost:3000/test.json
+
+###
+
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "esther@morris.com",
+  "password": "password"
+}
