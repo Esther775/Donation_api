@@ -18,4 +18,6 @@ class UsersController < ApplicationController
     render json: {message: "hello"}
   end
 
+  
+
 end
