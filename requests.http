@@ -1,5 +1,13 @@
-@esther_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NzgyMDg3NTZ9.ttbvxxB_3Y5R0kASl39cFsI0bSvj7ca2i68qlbKogUo
+@esther_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Nzg1NTQ4MzN9.-VpVWGC5a8RVjX4ZdcC1OqYJE291Bvun-Ne6yBp3etI
 
+### Sessions create (login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "esther@morris.com",
+  "password": "password"
+}
 
 #Users Create (User signup)
 
@@ -12,16 +20,84 @@ Content-Type: application/json
   "password": "password"
 }
 
-###
-POST  http://localhost:3000/test.json
+###Show Specific User
+get http://localhost:3000/users/2.json
 
-###
 
-### Sessions create (login)
-POST http://localhost:3000/sessions.json
+###Index all Users
+GET http://localhost:3000/users.json
+
+
+### Delete a user:
+
+delete http://localhost:3000/users/3.json
+Content-Type: application/json
+
+
+### Index all Nonprofits
+
+get http://localhost:3000/nonprofits.json
+
+###Update User
+
+patch http://localhost:3000/users/2.json
 Content-Type: application/json
 
 {
-  "email": "esther@morris.com",
-  "password": "password"
+  "name": "Joe",
+  "email":"joe@Joe.com",
+  "profile_picture":"none yet",
+  "location": "NYC",
+  "bio": "Im an artist",
+  "monthly_donation_amount":35
 }
+
+
+
+### Create new Nonprofit
+post http://localhost:3000/nonprofits.json
+Content-Type: application/json
+
+{
+  "name": "New Nonprofit",
+  "catagory_id": 4,
+  "description": "this is a new one",
+  "website": "Blank.com",
+  "picture": "none"
+}
+
+
+###Show Nonprofit
+
+get http://localhost:3000/nonprofits/2.json
+
+
+
+###Update Nonprofit
+
+patch http://localhost:3000/nonprofits/2.json
+Content-Type: application/json
+
+{
+    "name": "TheCeliac Fund",
+    "catagory_id": 2,
+    "description": "No Wheat!",
+    "website": "mywebsite.com",
+    "picture": "jpeg"
+}
+
+###Delete Nonprofit
+
+Delete http://localhost:3000/nonprofits.json
+Content-Type: application/json
+
+{
+  "id": 4
+}
+
+### Catagories index
+
+get http://localhost:3000/catagories.json
+
+
+
