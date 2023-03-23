@@ -1,7 +1,7 @@
   {
     id: @user.id,
     name: @user.name,
-    email: @user.id,
+    email: @user.email,
     profile_picture: @user.profile_picture,
     location: @user.location,
     bio: @user.bio,

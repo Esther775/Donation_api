@@ -24,6 +24,21 @@ Content-Type: application/json
 get http://localhost:3000/users/1.json
 
 
+###Update User
+
+patch http://localhost:3000/users/1.json
+Content-Type: application/json
+
+{
+  "name": "Lost",
+  "email":"rudee@popo.com",
+  "profile_picture":"nothing yet",
+  "location": "NYCity",
+  "bio": "Im an artisty",
+  "monthly_donation_amount":350,
+  "my_new_nonprofit": [1,3]
+}
+
 ###Index all Users
 GET http://localhost:3000/users.json
 
@@ -37,21 +52,6 @@ Content-Type: application/json
 ### Index all Nonprofits
 
 get http://localhost:3000/nonprofits.json
-
-###Update User
-
-patch http://localhost:3000/users/5.json
-Content-Type: application/json
-
-{
-  "name": "Testee",
-  "email":"joe@Joe.com",
-  "profile_picture":"none yet",
-  "location": "NYC",
-  "bio": "Im an artist",
-  "monthly_donation_amount":35,
-  "my_nonprofits":[1, 2, 3]
-}
 
 
 
