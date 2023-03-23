@@ -1,27 +1,27 @@
-@esther_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Nzg1NTQ4MzN9.-VpVWGC5a8RVjX4ZdcC1OqYJE291Bvun-Ne6yBp3etI
+@joe_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Nzk1MDIwODZ9.Wy9R5UJruyrzvfjT6tzYRY08gfeXt5_HO2BcGih4OJw
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "esther@morris.com",
+  "email": "test@test.com",
   "password": "password"
 }
 
 #Users Create (User signup)
-
+###
 POST http://localhost:3000/users.json
 Content-Type: application/json 
 
 {
-  "name": "Esther",
-  "email": "esther@morris.com",
+  "name": "Test",
+  "email": "test@test.com",
   "password": "password"
 }
 
 ###Show Specific User
-get http://localhost:3000/users/2.json
+get http://localhost:3000/users/1.json
 
 
 ###Index all Users
@@ -40,16 +40,17 @@ get http://localhost:3000/nonprofits.json
 
 ###Update User
 
-patch http://localhost:3000/users/2.json
+patch http://localhost:3000/users/5.json
 Content-Type: application/json
 
 {
-  "name": "Joe",
+  "name": "Testee",
   "email":"joe@Joe.com",
   "profile_picture":"none yet",
   "location": "NYC",
   "bio": "Im an artist",
-  "monthly_donation_amount":35
+  "monthly_donation_amount":35,
+  "my_nonprofits":[1, 2, 3]
 }
 
 
@@ -69,7 +70,7 @@ Content-Type: application/json
 
 ###Show Nonprofit
 
-get http://localhost:3000/nonprofits/2.json
+get http://localhost:3000/nonprofits/15.json
 
 
 

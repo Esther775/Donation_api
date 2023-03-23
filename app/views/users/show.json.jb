@@ -1,0 +1,17 @@
+  {
+    id: @user.id,
+    name: @user.name,
+    email: @user.id,
+    profile_picture: @user.profile_picture,
+    location: @user.location,
+    bio: @user.bio,
+    monthly_donation_amount: @user.monthly_donation_amount,
+
+      my_nonprofts: @user.user_nonprofits.map do |nonprofit|
+
+         {nonprofit_id: nonprofit.nonprofit_id}
+
+      end,
+  
+  }
+

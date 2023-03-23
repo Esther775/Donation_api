@@ -94,6 +94,7 @@ GEM
     importmap-rails (1.1.5)
       actionpack (>= 6.0.0)
       railties (>= 6.0.0)
+    jb (0.8.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   capybara
   debug
   importmap-rails
+  jb
   jbuilder
   jwt
   pg
