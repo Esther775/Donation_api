@@ -53,26 +53,28 @@ class UsersController < ApplicationController
     user.bio = params[:bio] || user.bio
     user.monthly_donation_amount = params[:monthly_donation_amount] || user.monthly_donation_amount
     user.save
-  
+
+#delete all nonprofits in users' profile
+    user.user_nonprofits.destroy_all
+
     #   add new nonprofit to user prifile 
     params[:my_new_nonprofit].each do |new_nonprofit|
       p "*" * 60
       p new_nonprofit
-
-      if user.user_nonprofits.find_by(nonprofit_id: new_nonprofit)
-        # "Nonprofit exists in your profile already"    
-        p "Do noithing"    
-      else
+      # if user.user_nonprofits.find_by(nonprofit_id: new_nonprofit)
+      #   # "Nonprofit exists in your profile already"    
+      #   p "Do noithing"    
+      # else
         add_nonprofit= UserNonprofit.new(
           user_id: user.id,
           nonprofit_id: new_nonprofit
         )
         add_nonprofit.save
-      end
+      # end
     end
     
     render json: {user: user.as_json }
     #try to add user.user_nonprofits to json response)
-    
+
   end
 end
