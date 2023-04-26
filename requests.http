@@ -1,42 +1,39 @@
-@joe_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Nzk1MDIwODZ9.Wy9R5UJruyrzvfjT6tzYRY08gfeXt5_HO2BcGih4OJw
+@joe_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2ODI1OTEwNTd9.od8vzEmcQpTdRc0MujjA1dGCjZisLThYAztGiF-yyn4
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "test@test.com",
+  "email": "John@Doe.com",
   "password": "password"
 }
 
 #Users Create (User signup)
 ###
-POST http://localhost:3000/users.json
+POST http://localhost:3000/user.json
 Content-Type: application/json 
 
 {
-  "name": "Test",
-  "email": "test@test.com",
+  "name": "Tes1",
+  "email": "test1@test.com",
   "password": "password"
 }
 
 ###Show Specific User
-get http://localhost:3000/users/1.json
+get http://localhost:3000/user/2.json
 
 
 ###Update User
 
-patch http://localhost:3000/users/1.json
+patch http://localhost:3000/user/2.json
 Content-Type: application/json
+Application: Bearer {{joe_jwt}}
 
 {
-  "name": "Lost",
-  "email":"rudee@popo.com",
-  "profile_picture":"nothing yet",
-  "location": "NYCity",
-  "bio": "Im an artisty",
-  "monthly_donation_amount":350,
-  "my_new_nonprofit": []
+  "name": "LJohn Does",
+  "profile_picture": "screenshot-2023-04-25-at-11-17-07-am.png"
+ 
 }
 
 ###Index all Users
@@ -45,7 +42,7 @@ GET http://localhost:3000/users.json
 
 ### Delete a user:
 
-delete http://localhost:3000/users/3.json
+delete http://localhost:3000/user/3.json
 Content-Type: application/json
 
 

@@ -12,6 +12,5 @@
          {nonprofit_id: nonprofit.nonprofit_id}
 
       end,
-  
   }
 

@@ -7,11 +7,11 @@ Rails.application.routes.draw do
   # get "/bookings/:id" => "bookings#show"
   post "/sessions" => "sessions#create"
 
-  post "/users" => "users#create"
-  get "/users/:id" => "users#show"
+  post "/user" => "users#create"
+  get "/user/:id" => "users#show"
   get "/users" => "users#index"
-  delete "/users/:id" => "users#destroy"
-  patch "/users/:id" => "users#update"
+  delete "/user/:id" => "users#destroy"
+  patch "/user/:id" => "users#update"
 
 
   get "/nonprofits" => "nonprofits#index"

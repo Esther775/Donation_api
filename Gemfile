@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 gem 'jwt'
 gem 'rack-cors', :require =>'rack/cors'
 
+gem 'carrierwave' 
+gem 'mini_magick'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 

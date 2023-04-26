@@ -10,11 +10,12 @@ class UsersController < ApplicationController
 
 
   def show
-    @user=User.find_by(id: params[:id])
+    user=User.find_by(id: params[:id])
+#     "***********************************"
+#  p current_user
+    render json: {message: user.as_json}
 
-    # render json: {message: user.as_json}
-
-    render template: "users/show"
+    # render template: "users/show"
 
   end
 
@@ -48,33 +49,40 @@ class UsersController < ApplicationController
     
     user.name = params[:name] || user.name
     user.email = params[:email] || user.email
-    user.profile_picture = params[:profile_picture] || user.profile_picture
     user.location = params[:location] || user.location
     user.bio = params[:bio] || user.bio
+    user.passion = params[:passion] || user.passion
     user.monthly_donation_amount = params[:monthly_donation_amount] || user.monthly_donation_amount
-    user.save
+    user.profile_picture = params[:profile_picture] || user.profile_picture
 
-#delete all nonprofits in users' profile
-    user.user_nonprofits.destroy_all
 
-    #   add new nonprofit to user prifile 
-    params[:my_new_nonprofit].each do |new_nonprofit|
-      p "*" * 60
-      p new_nonprofit
-      # if user.user_nonprofits.find_by(nonprofit_id: new_nonprofit)
-      #   # "Nonprofit exists in your profile already"    
-      #   p "Do noithing"    
-      # else
-        add_nonprofit= UserNonprofit.new(
-          user_id: user.id,
-          nonprofit_id: new_nonprofit
-        )
-        add_nonprofit.save
-      # end
+    # p "***********************************"
+    # p user.profile_picture.url
+    # p current_user
+    # p user.profile_picture
+      if user.save
+        render json: {user: user.as_json }
+      else
+        render json: { errors: current_user.errors.full_messages }, status: :unprocessable_entity
+      end
+   
     end
-    
-    render json: {user: user.as_json }
-    #try to add user.user_nonprofits to json response)
-
   end
-end
+    #  Temp Deleted
+    # #delete all nonprofits in users' profile
+    # user.user_nonprofits.destroy_all
+
+    # #   add new nonprofit to user prifile 
+    # params[:my_new_nonprofit].each do |new_nonprofit|
+    #   p "*" * 60
+    #   p new_nonprofit
+
+    #     add_nonprofit= UserNonprofit.new(
+    #       user_id: user.id,
+    #       nonprofit_id: new_nonprofit
+    #     )
+    #     add_nonprofit.save
+    # end
+    
+    
+
