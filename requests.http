@@ -5,7 +5,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "John@Doe.com",
+  "email": "test2dv1@trest.com",
   "password": "password"
 }
 
@@ -15,13 +15,13 @@ POST http://localhost:3000/user.json
 Content-Type: application/json 
 
 {
-  "name": "Tes1",
-  "email": "test1@test.com",
+  "name": "Tdersvv2",
+  "email": "test2dv1@trest.com",
   "password": "password"
 }
 
 ###Show Specific User
-get http://localhost:3000/user/2.json
+get http://localhost:3000/user/9.json
 
 
 ###Update User

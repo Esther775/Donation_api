@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: { message: user.as_json }, status: :created
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     user=User.find_by(id: params[:id])
     user.destroy
 
-    render json: {message: "User has been deleted"}
+    render json: {message: user.as_json}
   end
 
 
