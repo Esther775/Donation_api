@@ -1,4 +1,4 @@
-@joe_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2ODI1OTEwNTd9.od8vzEmcQpTdRc0MujjA1dGCjZisLThYAztGiF-yyn4
+@joe_jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyNywiZXhwIjoxNjg2OTM0NzIxfQ.2gKUsA6o2-8JOA7F00C3gl6YdfLnSQITTO8i9kYrosY
 
 ### Sessions create (login)
 POST http://localhost:3000/sessions.json
@@ -21,18 +21,19 @@ Content-Type: application/json
 }
 
 ###Show Specific User
-get http://localhost:3000/user/9.json
+get http://localhost:3000/user/23.json
 
 
 ###Update User
 
-patch http://localhost:3000/user/2.json
+patch http://localhost:3000/user/23.json
 Content-Type: application/json
 Application: Bearer {{joe_jwt}}
 
 {
   "name": "LJohn Does",
-  "profile_picture": "screenshot-2023-04-25-at-11-17-07-am.png"
+  "profile_picture": "screenshot-2023-04-25-at-11-17-07-am.png",
+  "my_new_nonprofit": []
  
 }
 
