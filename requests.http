@@ -26,14 +26,14 @@ get http://localhost:3000/user/23.json
 
 ###Update User
 
-patch http://localhost:3000/user/23.json
+patch http://localhost:3000/user/10.json
 Content-Type: application/json
 Application: Bearer {{joe_jwt}}
 
 {
   "name": "LJohn Does",
   "profile_picture": "screenshot-2023-04-25-at-11-17-07-am.png",
-  "my_new_nonprofit": []
+  "my_new_nonprofit": 1
  
 }
 

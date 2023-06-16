@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 
 
   def show
-    user=User.find_by(id: params[:id])
+    @user=User.find_by(id: params[:id])
 #     "***********************************"
 #  p current_user
-    render json: {message: user.as_json, nonprofits: user.user_nonprofits.as_json}
+    render template: "users/show"
 
     # render template: "users/show"
 
@@ -57,16 +57,18 @@ class UsersController < ApplicationController
         #   Temp Delete
         # delete all nonprofits in users' profile
       if user.user_nonprofits !=nil
-        user.user_nonprofits.destroy_all
+        p "*" * 60
+        p params[:my_new_nonprofit]
+        p "*" * 60
+        # user.user_nonprofits.destroy_all
           #  add new nonprofit to user profile 
-        params[:my_new_nonprofit].each do |new_nonprofit|
          add_nonprofit= UserNonprofit.new(
             user_id: user.id,
-            nonprofit_id: new_nonprofit
+            nonprofit_id:  params[:my_new_nonprofit]
           )
           add_nonprofit.save
         end
-      end
+
 
       if user.save
         render json: {message: user.as_json}
