@@ -26,6 +26,10 @@ Nonprofit.create(name: "The Ocean Cleanup", catagory_id:"3", description: "he Oc
 Nonprofit.create(name: "he Nature Conservancy",catagory_id:"3", description: "Founded in the U.S. through grassroots action in 1951, The Nature Conservancy (TNC) has grown to become one of the most effective and wide-reaching environmental organizations in the world. Thanks to more than a million members and the dedicated efforts of our diverse staff and over 400 scientists, we impact conservation in 79 countries and territories: 37 by direct conservation impact and 42 through partners.", website: "purewater.com", picture: "https://cooksoncommunications.com/wp-content/uploads/Nature-C-logo.jpg")
 Nonprofit.create(name: "ASPCA", catagory_id:"2", description: "The American Society for the Prevention of Cruelty to Animals is a non-profit organization dedicated to preventing animal cruelty. Based in New York City since its inception in 1866, the organization's mission is to provide effective means for the prevention of cruelty to animals throughout the United States.", website: "purewater.com", picture:"https://yt3.googleusercontent.com/ytc/AGIKgqMzlPHbduSCIRihb1HKZDI-pH0q5Jvd7kTRpnkU2hI=s900-c-k-c0x00ffffff-no-rj")
 # Nonprofit.create(name: Faker::Company.name, catagory_id: 1, description: Faker::Company.catch_phrase, website: Faker::Company.name + ".com", picture: "https://pigment.github.com/fake-logos/logos/medium/color/5.png")
+Nonprofit.create(name: "SC Codes", catagory_id:"6", description: "SC Codes is a learning platform that gives all South Carolina residents free access to code education.", website: "/www.sccodes.org", picture:"https://www.sccodes.org/wp-content/uploads/2018/08/logo.png")
+
+
+
 UserNonprofit.create(user_id:1, nonprofit_id:1)
 UserNonprofit.create(user_id:1, nonprofit_id:2)
 UserNonprofit.create(user_id:1, nonprofit_id:3)

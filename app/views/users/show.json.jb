@@ -7,9 +7,10 @@
     bio: @user.bio,
     monthly_donation_amount: @user.monthly_donation_amount,
 
-    my_nonprofts: @user.nonprofits.map do |nonprofit|
+    my_nonprofits: @user.nonprofits.map do |nonprofit|
 
-    {name: nonprofit.name,
+    {id: nonprofit.id,
+    name: nonprofit.name,
          description: nonprofit.description,
          website: nonprofit.website,
          picture: nonprofit.picture}
